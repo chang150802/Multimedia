@@ -1,0 +1,175 @@
+<!doctype html>
+<title>Python Flask File Upload Example</title>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress Images</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" rel="stylesheet"
+          href="./Capture/favicon.ico">
+    <link rel="stylesheet" href="./static/css/Style.css">
+</head>
+
+<body>
+<!--1.Header-->
+<div class="header">
+    <a class="logo" href="">COMPRESS IMAGES</a>
+    <div class="navbar">
+        <a href="compress">Nén ảnh</a>
+
+        <div class="subnav">
+            <button class="subnavbtn" href="">Chỉnh sửa ảnh <i
+                    class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="rotate">Xoay ảnh</a>
+                <a href="flip">Lật ảnh</a>
+<!--                <a href="">Thay đổi kích thước ảnh</a>-->
+            </div>
+        </div>
+        <a href="edit">Chuyển đổi ảnh </a>
+        <a href>Trình biên tập ảnh</a>
+        <div class="subnav">
+            <button class="subnavbtn" href>Các công cụ khác <i
+                    class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="remove">Xóa nền</a>
+<!--                <a href>Phục hồi ảnh</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--2.Main-->
+<div class="main">
+    <h1>TẢI TỆP LÊN </h1>
+    <p>Trình tối ưu hóa hình ảnh trực tuyến miễn phí. Nén hình ảnh của
+        bạn bằng trình duyệt hiện đại như Chrome, Opera và Firefox.</p>
+    <div class="container">
+        <h2>Select a file to upload</h2>
+        <p>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        </p>
+        {% if filename %}
+        <div class="ShowUploadImage">
+            <img src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+        {% endif %}
+        <form class="form-group" method="post" action="/" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="files">Chọn tệp:</label>
+                <input type="file" id="files" name="file" autocomplete="off" required>>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" value="Submit">Tải lên</button>
+            </div>
+        </form>
+   <h6><br><br><br><br><br><br><br>
+    </h6>
+    </div>
+    <h6><br><br><br><br><br><br><br>
+    </h6>
+</div>
+
+
+<!--4.Footer-->
+<div class="footer"></div>
+<script src="main.js"></script>
+</body>
+
+
+<style>
+    .main {
+     background-image: url("./static/images/anhnen.jpg");
+     max-width: 200%;
+     height: auto;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     background-position: center;
+     position: relative;
+   }
+
+   .main h1 {
+     text-align: center;
+     color: white;
+     font-size: 50px;
+     margin: 0;
+   }
+   .main h2 {
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     margin: 0;
+   }
+
+
+   .main p {
+     text-align: center;
+     color: white;
+     font-size: 24px;
+     margin: 20px 100px;
+   }
+
+   /*3.Container*/
+
+   .main .container {
+     width: 900px;
+     margin: 0 auto;
+     padding: 20px;
+     border: 1px solid #ccc;
+   }
+   .main .container img{
+
+      max-width: 100%;
+     height: auto;
+   }
+
+   .main .container h1 {
+     text-align: center;
+     margin-bottom: 20px;
+   }
+
+   .container .form-group {
+     margin-bottom: 15px;
+   }
+
+   .container .form-group label {
+     display: block;
+     margin-bottom: 5px;
+   }
+
+   .container .form-group input[type="file"],
+   input[type="text"] {
+     width: 100%;
+     padding: 8px;
+     border: 1px solid #ccc;
+   }
+
+   .container .form-group button[type="submit"] {
+   background-color: #007bff;
+     color: white;
+     padding: 10px 20px;
+     border: none;
+     cursor: pointer;
+
+   ShowUploadImage
+   .container .ShowUploadImage img {
+     width: 100%;
+     padding: 8px;
+     border: 10px solid #ccc;
+      width: 200px;
+     height: 300px;
+     object-fit: cover;
+   }
+
+</style>

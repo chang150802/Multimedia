@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress Images</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" rel="stylesheet"
+          href="./Capture/favicon.ico">
+        <link rel="stylesheet" href="./static/css/Style.css">
+</head>
+<body>
+
+{% block content %} {% endblock %}
+  <!--1.Header-->
+        <div class="header">
+            <a class="logo" href="#/upload.html">COMPRESS IMAGES</a>
+            <div class="navbar">
+                <a href>Nén ảnh</a>
+                <div class="subnav">
+                    <button class="subnavbtn" href>Chỉnh sửa ảnh <i
+                            class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href>Thay đổi kích thước ảnh</a>
+                        <a href>Cắt ảnh</a>
+                        <a href>Xoay ảnh</a>
+                    </div>
+                </div>
+                <div class="subnav">
+                    <button class="subnavbtn" href>Chuyển đổi ảnh <i
+                            class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href>Chuyển đổi sang JPG</a>
+                        <a href>Chuyển đổi từ JPG</a>
+                    </div>
+                </div>
+                <a href>Trình biên tập ảnh</a>
+                <div class="subnav">
+                    <button class="subnavbtn" href>Các công cụ khác <i
+                            class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href>Xóa nền</a>
+                        <a href>Phục hồi ảnh</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
